@@ -4,8 +4,6 @@
 with the specified max_delay"""
 import asyncio
 from typing import List
-
-
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
@@ -16,5 +14,5 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     my_list = []
     for i in range(n):
         my_list.append(task_wait_random(max_delay))
-    s = await asyncio.gather(*my_list)
-    return sorted(s)
+    sor = await asyncio.gather(*my_list)
+    return sorted(sor)
