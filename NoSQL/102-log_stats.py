@@ -15,7 +15,7 @@ if __name__ == "__main__":
         print(f"\tmethod {method}: {c.count_documents({'method': method})}")
     msg = "status check"
     print(f"{c.count_documents({'method': 'GET', 'path': '/status'})} {msg}")
-    print("Ips:")
+    print("IPs:")
     sor = c.aggregate([{"$group": {"_id": "$ip", "count": {"$sum": 1}}},
                        {"$sort": {"count": -1}}, {"$limit": 10}])
     for ip in sor:
