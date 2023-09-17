@@ -9,6 +9,9 @@ export default class HolbertonCourse {
       throw new TypeError('Length must be a number')
     }
     this._length = length;
+    if (typeof students !== 'object') {
+      throw new TypeError('Students must be an object')
+    }
     this._students = students;
   }
   // get method for name
@@ -44,6 +47,9 @@ export default class HolbertonCourse {
 
   // set method for students
   set students(value) {
+    if (typeof value !== 'object') {
+      throw new TypeError('Students must be an object')
+    }
     this._students = value;
   }
 }
