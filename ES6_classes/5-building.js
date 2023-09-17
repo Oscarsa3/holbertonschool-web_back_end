@@ -9,12 +9,7 @@ export default class Building {
 
   // get method
   get sqft() {
-    return this.sqft;
-  }
-
-  // set method
-  set sqft(value) {
-    this._sqft = value;
+    return this._sqft;
   }
 
   // new method
