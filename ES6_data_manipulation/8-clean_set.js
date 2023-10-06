@@ -1,7 +1,10 @@
 export default function cleanSet(set, startString) {
-  if (startString && startString instanceof String) {
-    return Array.from(set).filter((value) => value.startsWith(startString)).map((value) => value.slice(startString.length)).join('-');
+  const fin = [];
+  if (startString && typeof startString === 'string') {
+    const arr = Array.from(set);
+    arr.forEach((str) => {
+      if (str && str.startsWith(startString)) fin.push(str.slice(startString.length));
+    });
   }
-  console.log('' instanceof String);
-  return '';
+  return fin.join('-');
 }
